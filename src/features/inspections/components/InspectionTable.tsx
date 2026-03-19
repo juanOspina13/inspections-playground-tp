@@ -71,7 +71,7 @@ export function InspectionTable({ inspections, onSelect, searchQuery }: Inspecti
               <td><StatusBadge status={insp.estado} /></td>
               <td>
                 <div className='flex gap-4'>
-                  <button disabled={insp.estado !== 'pendiente'} className="px-3 py-1.5 text-sm font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" onClick={(e) => { e.stopPropagation(); onSelect(insp); }}>
+                  <button disabled={insp.estado == 'pendiente'} className="px-3 py-1.5 text-sm font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" onClick={(e) => { e.stopPropagation(); onSelect(insp); }}>
                     Ver detalle
                   </button>
                  
