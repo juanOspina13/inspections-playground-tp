@@ -1,0 +1,10 @@
+{
+  "global": {
+    "version": 1,
+    "production": true,
+    "api": "/api",
+    "basePath": "",
+    "inactivityAutoLogoutTime": 1800000,
+    "inactivityWarningTime": 1500000
+  }
+}

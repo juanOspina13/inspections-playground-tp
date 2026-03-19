@@ -1,0 +1,40 @@
+export type InspectionStatus = 'aprobada' | 'rechazada' | 'pendiente' | 'en_progreso';
+export type VehicleType = 'sedan' | 'suv' | 'camioneta' | 'camion' | 'motocicleta' | 'bus';
+export type Severity = 'baja' | 'media' | 'alta' | 'critica';
+
+export interface InspectionItem {
+  nombre: string;
+  resultado: 'bien' | 'observacion' | 'falla';
+  observacion?: string;
+  severidad?: Severity;
+}
+
+export interface InspectionCategory {
+  categoria: string;
+  items: InspectionItem[];
+}
+
+export interface Inspection {
+  id: string;
+  placa: string;
+  tipoVehiculo: VehicleType;
+  marca: string;
+  modelo: string;
+  anio: number;
+  kilometraje: number;
+  inspector: string;
+  fecha: string;
+  estado: InspectionStatus;
+  categorias: InspectionCategory[];
+  observacionesGenerales?: string;
+  proximaInspeccion?: string;
+}
+
+export interface DashboardStats {
+  total: number;
+  aprobadas: number;
+  rechazadas: number;
+  pendientes: number;
+  enProgreso: number;
+  tasaAprobacion: number;
+}
