@@ -1,6 +1,6 @@
+import { useRef } from 'react';
 import type { Inspection, VehicleType } from '@/types/inspection';
 import { StatusBadge } from './StatusBadge';
-import { SecondaryButton } from './SecondaryButton';
 
 const vehicleIcons: Record<VehicleType, string> = {
   sedan: '🚗',
@@ -18,6 +18,13 @@ interface InspectionTableProps {
 }
 
 export function InspectionTable({ inspections, onSelect, searchQuery }: InspectionTableProps) {
+  const tableRef = useRef<HTMLTableElement>(null);
+
+  const scrollToTop = () => {
+    console.log("html element", tableRef.current);
+    tableRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   if (inspections.length === 0) {
     return (
       <div className="empty-state">
@@ -31,7 +38,7 @@ export function InspectionTable({ inspections, onSelect, searchQuery }: Inspecti
   return (
     <div className="table-container">
       {searchQuery}
-      <table className="inspection-table">
+      <table ref={tableRef} className="inspection-table">
         <thead>
           <tr>
             <th>ID</th>
@@ -74,6 +81,11 @@ export function InspectionTable({ inspections, onSelect, searchQuery }: Inspecti
           ))}
         </tbody>
       </table>
+      {inspections.length > 5 && (
+        <button className="px-3 py-1.5 mt-2 text-sm text-gray-500 hover:text-gray-700" onClick={scrollToTop}>
+          ↑ Volver arriba
+        </button>
+      )}
     </div>
   );
 }
