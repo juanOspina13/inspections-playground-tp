@@ -19,6 +19,7 @@ export function DashboardPage() {
     setSelectedInspection,
     stats,
     filteredInspections,
+    dialog
   } = useInspectionDashboard();
 
   return (
