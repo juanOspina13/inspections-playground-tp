@@ -18,7 +18,7 @@ export function useInspectionDetail(onClose: () => void, inspection: Inspection)
             window.removeEventListener('keydown', handleKeyDown);
             document.body.style.overflow = previousOverflow;
         };
-    }, [onClose]);
+    }, [inspection]);
 
     const totalItems = inspection.categorias.reduce((sum, cat) => sum + cat.items.length, 0);
     const failItems = inspection.categorias.reduce(
