@@ -1,6 +1,8 @@
+import { useEffect } from 'react';
 import type { Inspection, InspectionItem, Severity } from '@/types/inspection';
 import { StatusBadge } from './StatusBadge';
 import { NextInspection } from './NextInspection';
+import { useInspectionDetail } from '@/hooks/useInspectionDetail/useInspectionDetail';
 
 interface InspectionDetailProps {
   inspection: Inspection;
@@ -22,16 +24,7 @@ const severityLabels: Record<Severity, { label: string; className: string }> = {
 };
 
 export function InspectionDetail({ inspection, onClose, searchQuery }: InspectionDetailProps) {
-  const totalItems = inspection.categorias.reduce((sum, cat) => sum + cat.items.length, 0);
-  const failItems = inspection.categorias.reduce(
-    (sum, cat) => sum + cat.items.filter((i) => i.resultado === 'falla').length,
-    0,
-  );
-  const obsItems = inspection.categorias.reduce(
-    (sum, cat) => sum + cat.items.filter((i) => i.resultado === 'observacion').length,
-    0,
-  );
-  const okItems = totalItems - failItems - obsItems;
+  const { okItems, obsItems, failItems } = useInspectionDetail(onClose, inspection);
 
   return (
     <dialog open className="inspection-detail">
