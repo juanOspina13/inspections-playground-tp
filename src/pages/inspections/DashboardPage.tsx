@@ -19,7 +19,6 @@ export function DashboardPage() {
     setSelectedInspection,
     stats,
     filteredInspections,
-    dialog
   } = useInspectionDashboard();
 
   return (
@@ -51,9 +50,7 @@ export function DashboardPage() {
       </div>
 
       {selectedInspection && (
-        <InspectionProvider value={{ proximaInspeccion: selectedInspection.proximaInspeccion ?? null }}>
-          {/* Proveemos el contexto de inspección para que el hijo del detalle acceder la data sin prop drilling */}
-
+        <InspectionProvider initialProximaInspeccion={selectedInspection.proximaInspeccion ?? null}>
           <InspectionDetail
             inspection={selectedInspection}
             onClose={() => setSelectedInspection(null)}
