@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+
 import type { Inspection, InspectionItem, Severity } from '@/types/inspection';
 import { StatusBadge } from './StatusBadge';
 import { NextInspection } from './NextInspection';
