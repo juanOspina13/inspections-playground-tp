@@ -14,6 +14,7 @@ export function useInspectionDetail(onClose: () => void, inspection: Inspection)
         document.body.style.overflow = 'hidden';
         window.addEventListener('keydown', handleKeyDown);
 
+        //este es el cleanup que se ejecuta cuando el componente se desmonta o cuando cambie la inspección
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
             document.body.style.overflow = previousOverflow;
