@@ -23,6 +23,7 @@ interface InspectionProviderProps {
 const InspectionContext = createContext<InspectionContextValue | undefined>(undefined);
 
 function inspectionReducer(state: InspectionState, action: InspectionAction): InspectionState {
+  console.log('Reducer action:', action); // Agrega este log para depuración
   switch (action.type) {
     case 'sync':
       return { ...state, proximaInspeccion: action.payload };
@@ -49,6 +50,8 @@ export function InspectionProvider({
   children,
   initialProximaInspeccion = null,
 }: InspectionProviderProps) {
+
+  // se crea un inspectionReducer para manejar el estado de la próxima inspección, con acciones para sincronizar, reprogramar y limpiar el programa de inspección
   const [state, dispatch] = useReducer(inspectionReducer, {
     proximaInspeccion: initialProximaInspeccion,
   });

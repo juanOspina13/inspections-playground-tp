@@ -2,7 +2,7 @@ import type { Inspection } from "@/types/inspection";
 import { useEffect } from "react";
 
 export function useInspectionDetail(onClose: () => void, inspection: Inspection) {
-    useEffect(() => {
+    useEffect(() => { 
         const previousOverflow = document.body.style.overflow;
 
         const handleKeyDown = (event: KeyboardEvent) => {
