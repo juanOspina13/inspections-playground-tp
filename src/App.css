@@ -96,6 +96,115 @@
   font-weight: 500;
 }
 
+/* ========== Hooks Example ========== */
+.hooks-example {
+  background: linear-gradient(135deg, #f8fafc 0%, #eef6ff 100%);
+  border: 1px solid #dbe7f5;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  margin-bottom: 24px;
+  padding: 20px;
+}
+
+.hooks-example__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.hooks-example__title {
+  color: var(--gray-900);
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.hooks-example__description,
+.hooks-example__hint {
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.hooks-example__control {
+  color: var(--gray-700);
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  font-weight: 600;
+  gap: 8px;
+  min-width: 200px;
+}
+
+.hooks-example__select {
+  padding: 8px 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--gray-700);
+}
+
+.hooks-example__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.hooks-example__card {
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.hooks-example__label {
+  color: var(--gray-500);
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.hooks-example__value {
+  color: var(--gray-900);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.hooks-example__actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.hooks-example__counter {
+  color: var(--gray-700);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .hooks-example__header {
+    flex-direction: column;
+  }
+
+  .hooks-example__control {
+    min-width: 100%;
+  }
+
+  .hooks-example__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .hooks-example__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ========== Filters ========== */
 .filters {
   padding: 16px 20px;
