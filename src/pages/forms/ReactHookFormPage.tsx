@@ -89,7 +89,8 @@ export function ReactHookFormPage() {
         {/* Header */}
         <div className="mb-6">
           <nav className="flex gap-4 text-sm mb-4 flex-wrap">
-            <Link to={appRoutes.DASHBOARD} className="text-blue-600 hover:underline">← Dashboard</Link>
+            <Link to={appRoutes.HOME} className="text-blue-600 hover:underline">← Inicio</Link>
+            <Link to={appRoutes.DASHBOARD} className="text-blue-600 hover:underline">Dashboard</Link>
             <Link to={appRoutes.FORMS_CONTROLLED} className="text-blue-600 hover:underline">← Controlado</Link>
             <Link to={appRoutes.FORMS_UNCONTROLLED} className="text-blue-600 hover:underline">← No Controlado</Link>
           </nav>

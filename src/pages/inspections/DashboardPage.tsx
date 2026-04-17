@@ -33,6 +33,12 @@ export function DashboardPage() {
         </div>
         <nav className="flex gap-3 mt-3 flex-wrap">
           <Link
+            to={appRoutes.HOME}
+            className="px-3 py-1.5 text-sm bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors"
+          >
+            ← Conceptos
+          </Link>
+          <Link
             to={appRoutes.FORMS_CONTROLLED}
             className="px-3 py-1.5 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >

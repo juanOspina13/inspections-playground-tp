@@ -94,8 +94,9 @@ export function ControlledFormPage() {
       <div className="max-w-lg mx-auto">
         {/* Header */}
         <div className="mb-6">
-          <nav className="flex gap-4 text-sm mb-4">
-            <Link to={appRoutes.DASHBOARD} className="text-blue-600 hover:underline">← Dashboard</Link>
+          <nav className="flex gap-4 text-sm mb-4 flex-wrap">
+            <Link to={appRoutes.HOME} className="text-blue-600 hover:underline">← Inicio</Link>
+            <Link to={appRoutes.DASHBOARD} className="text-blue-600 hover:underline">Dashboard</Link>
             <Link to={appRoutes.FORMS_UNCONTROLLED} className="text-blue-600 hover:underline">Formulario No Controlado →</Link>
             <Link to={appRoutes.FORMS_HOOK_FORM} className="text-blue-600 hover:underline">React Hook Form →</Link>
           </nav>
