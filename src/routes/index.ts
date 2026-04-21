@@ -14,6 +14,7 @@ export const appRoutes = {
   CONCEPTS_USE_REDUCER: '/concepts/use-reducer',
   CONCEPTS_USE_TRANSITION: '/concepts/use-transition',
   CONCEPTS_USE_DEFERRED_VALUE: '/concepts/use-deferred-value',
+  CONCEPTS_USE_ACTION_STATE: '/concepts/use-action-state',
   CONCEPTS_CONTEXT_API: '/concepts/context-api',
   CONCEPTS_CUSTOM_HOOKS: '/concepts/custom-hooks',
   CONCEPTS_REDUX: '/concepts/redux',

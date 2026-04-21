@@ -16,3 +16,4 @@ export { RenderPropsPage } from './RenderPropsPage';
 export { AIUIPatternPage } from './AIUIPatternPage';
 export { UseTransitionPage } from './UseTransitionPage';
 export { UseDeferredValuePage } from './UseDeferredValuePage';
+export { UseActionStatePage } from './UseActionStatePage';

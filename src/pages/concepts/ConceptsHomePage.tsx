@@ -76,6 +76,14 @@ const concepts: ConceptCard[] = [
     icon: '🔮',
     category: 'Hooks',
   },
+  {
+    title: 'useActionState',
+    description: 'React 19: gestiona estado, pending y resultado de una form action en una sola llamada.',
+    route: appRoutes.CONCEPTS_USE_ACTION_STATE,
+    color: 'orange',
+    icon: '⚡',
+    category: 'Hooks',
+  },
   // Patrones
   {
     title: 'Context API',
