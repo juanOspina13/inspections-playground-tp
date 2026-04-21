@@ -3,6 +3,7 @@ export { UseStatePage } from './UseStatePage';
 export { UseEffectPage } from './UseEffectPage';
 export { UseRefPage } from './UseRefPage';
 export { UseMemoCallbackPage } from './UseMemoCallbackPage';
+export { StableReferencesPage } from './StableReferencesPage';
 export { UseReducerPage } from './UseReducerPage';
 export { ContextApiPage } from './ContextApiPage';
 export { CustomHooksPage } from './CustomHooksPage';

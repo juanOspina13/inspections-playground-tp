@@ -45,6 +45,14 @@ const concepts: ConceptCard[] = [
     category: 'Hooks',
   },
   {
+    title: 'Stable vs Unstable References',
+    description: 'Cómo las referencias de objetos y funciones impactan memo, effects y renders.',
+    route: appRoutes.CONCEPTS_STABLE_REFERENCES,
+    color: 'sky',
+    icon: '🧷',
+    category: 'Hooks',
+  },
+  {
     title: 'useReducer',
     description: 'Manejo de estado complejo con acciones y un reducer, similar a Redux.',
     route: appRoutes.CONCEPTS_USE_REDUCER,

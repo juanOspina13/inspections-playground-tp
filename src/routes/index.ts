@@ -10,6 +10,7 @@ export const appRoutes = {
   CONCEPTS_USE_EFFECT: '/concepts/use-effect',
   CONCEPTS_USE_REF: '/concepts/use-ref',
   CONCEPTS_USE_MEMO_CALLBACK: '/concepts/use-memo-callback',
+  CONCEPTS_STABLE_REFERENCES: '/concepts/stable-references',
   CONCEPTS_USE_REDUCER: '/concepts/use-reducer',
   CONCEPTS_USE_TRANSITION: '/concepts/use-transition',
   CONCEPTS_CONTEXT_API: '/concepts/context-api',

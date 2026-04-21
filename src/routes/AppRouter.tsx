@@ -9,6 +9,7 @@ import {
   UseEffectPage,
   UseRefPage,
   UseMemoCallbackPage,
+  StableReferencesPage,
   UseReducerPage,
   ContextApiPage,
   CustomHooksPage,
@@ -59,6 +60,10 @@ export const router = createBrowserRouter([
       {
         path: appRoutes.CONCEPTS_USE_MEMO_CALLBACK,
         element: <UseMemoCallbackPage />,
+      },
+      {
+        path: appRoutes.CONCEPTS_STABLE_REFERENCES,
+        element: <StableReferencesPage />,
       },
       {
         path: appRoutes.CONCEPTS_USE_REDUCER,
