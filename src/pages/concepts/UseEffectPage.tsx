@@ -3,6 +3,16 @@ import { Link } from 'react-router-dom';
 import { appRoutes } from '@/routes';
 
 export function UseEffectPage() {
+  // ─── Ejemplo 0: Ciclo de vida (mount, update, unmount) ────────────────────
+  const [showLifecycleDemo, setShowLifecycleDemo] = useState(true);
+  const [lifecycleCount, setLifecycleCount] = useState(0);
+  const [lifecycleLogs, setLifecycleLogs] = useState<string[]>([]);
+
+  const addLifecycleLog = (message: string) => {
+    const timestamp = new Date().toLocaleTimeString();
+    setLifecycleLogs((prev) => [`[${timestamp}] ${message}`, ...prev].slice(0, 8));
+  };
+
   // ─── Ejemplo 1: Efecto con cleanup (event listener) ─────────────────────────
   const [lastKey, setLastKey] = useState<string | null>(null);
   const [keyCount, setKeyCount] = useState(0);
@@ -64,6 +74,32 @@ export function UseEffectPage() {
     };
   }, [userId]);
 
+  function LifecycleChild({
+    count,
+    onLog,
+  }: {
+    count: number;
+    onLog: (message: string) => void;
+  }) {
+    useEffect(() => {
+      onLog('Mounting: componente montado');
+
+      return () => {
+        onLog('Unmount: cleanup al desmontar el componente');
+      };
+    }, [onLog]);
+
+    useEffect(() => {
+      onLog(`Update: count cambió a ${count}`);
+    }, [count, onLog]);
+
+    return (
+      <div className="bg-sky-50 border border-sky-200 rounded-lg p-3 text-sm text-sky-800">
+        Componente hijo activo. Valor actual: <strong>{count}</strong>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-4">
       <div className="max-w-2xl mx-auto">
@@ -112,6 +148,74 @@ export function UseEffectPage() {
   };
 }, [listenKeys]); // Dependencias: re-ejecuta si cambian`}</pre>
         </details>
+
+        {/* Ejemplo 0: Ciclo de vida */}
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+          <h2 className="text-lg font-semibold text-gray-700 mb-2">Ejemplo 0: Ciclo de vida (mounting, update, unmount)</h2>
+          <p className="text-sm text-gray-500 mb-4">
+            En componentes funcionales, el ciclo de vida se modela con <code className="bg-gray-100 px-1 rounded">useEffect</code>.
+            Aquí puedes montar/desmontar un hijo y cambiar props para ver cada fase en tiempo real.
+          </p>
+
+          <div className="bg-green-50 border border-green-200 rounded-lg p-3 text-sm text-green-800 mb-4">
+            <ul className="list-disc list-inside space-y-1">
+              <li><strong>Mounting:</strong> <code className="bg-green-100 px-1 rounded">useEffect(() =&gt; {'{...}'}, [])</code></li>
+              <li><strong>Update:</strong> <code className="bg-green-100 px-1 rounded">useEffect(() =&gt; {'{...}'}, [deps])</code> cuando cambian dependencias</li>
+              <li><strong>Unmount:</strong> función de cleanup del efecto al desmontar</li>
+            </ul>
+          </div>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            <button
+              onClick={() => setShowLifecycleDemo((prev) => !prev)}
+              className={`px-4 py-2 rounded-lg text-sm font-medium ${
+                showLifecycleDemo
+                  ? 'bg-red-500 text-white hover:bg-red-600'
+                  : 'bg-green-600 text-white hover:bg-green-700'
+              }`}
+            >
+              {showLifecycleDemo ? 'Unmount hijo' : 'Mount hijo'}
+            </button>
+            <button
+              onClick={() => setLifecycleCount((prev) => prev + 1)}
+              className="px-4 py-2 rounded-lg text-sm font-medium bg-blue-600 text-white hover:bg-blue-700"
+            >
+              Update count (+1)
+            </button>
+            <button
+              onClick={() => {
+                setLifecycleCount(0);
+                setLifecycleLogs([]);
+              }}
+              className="px-4 py-2 rounded-lg text-sm font-medium border border-gray-300 text-gray-700 hover:bg-gray-100"
+            >
+              Limpiar demo
+            </button>
+          </div>
+
+          <div className="space-y-3">
+            {showLifecycleDemo ? (
+              <LifecycleChild count={lifecycleCount} onLog={addLifecycleLog} />
+            ) : (
+              <div className="bg-gray-100 border border-gray-200 rounded-lg p-3 text-sm text-gray-500">
+                Componente hijo desmontado.
+              </div>
+            )}
+
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-3">
+              <p className="text-sm font-medium text-gray-700 mb-2">Log del ciclo de vida:</p>
+              {lifecycleLogs.length === 0 ? (
+                <p className="text-sm text-gray-400">Sin eventos aún.</p>
+              ) : (
+                <ul className="text-sm text-gray-600 space-y-1 font-mono">
+                  {lifecycleLogs.map((line, i) => (
+                    <li key={i}>{line}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        </div>
 
         {/* Ejemplo 1: Event Listener */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
