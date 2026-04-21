@@ -14,6 +14,12 @@ import {
   CustomHooksPage,
   ReduxPage,
   StyledComponentsPage,
+  HooksPatternPage,
+  CompoundPatternPage,
+  ContainerPresentationalPage,
+  RenderPropsPage,
+  AIUIPatternPage,
+  UseTransitionPage,
 } from '@/pages/concepts';
 
 export const router = createBrowserRouter([
@@ -59,6 +65,10 @@ export const router = createBrowserRouter([
         element: <UseReducerPage />,
       },
       {
+        path: appRoutes.CONCEPTS_USE_TRANSITION,
+        element: <UseTransitionPage />,
+      },
+      {
         path: appRoutes.CONCEPTS_CONTEXT_API,
         element: <ContextApiPage />,
       },
@@ -73,6 +83,27 @@ export const router = createBrowserRouter([
       {
         path: appRoutes.CONCEPTS_STYLED_COMPONENTS,
         element: <StyledComponentsPage />,
+      },
+      // Design Patterns
+      {
+        path: appRoutes.PATTERNS_HOOKS,
+        element: <HooksPatternPage />,
+      },
+      {
+        path: appRoutes.PATTERNS_COMPOUND,
+        element: <CompoundPatternPage />,
+      },
+      {
+        path: appRoutes.PATTERNS_CONTAINER_PRESENTATIONAL,
+        element: <ContainerPresentationalPage />,
+      },
+      {
+        path: appRoutes.PATTERNS_RENDER_PROPS,
+        element: <RenderPropsPage />,
+      },
+      {
+        path: appRoutes.PATTERNS_AI_UI,
+        element: <AIUIPatternPage />,
       },
       // Forms
       {

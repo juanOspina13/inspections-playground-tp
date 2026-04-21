@@ -52,6 +52,14 @@ const concepts: ConceptCard[] = [
     icon: '⚙️',
     category: 'Hooks',
   },
+  {
+    title: 'useTransition',
+    description: 'Marca actualizaciones como no urgentes para mantener la UI fluida.',
+    route: appRoutes.CONCEPTS_USE_TRANSITION,
+    color: 'teal',
+    icon: '⏳',
+    category: 'Hooks',
+  },
   // Patrones
   {
     title: 'Context API',
@@ -68,6 +76,47 @@ const concepts: ConceptCard[] = [
     color: 'pink',
     icon: '🪝',
     category: 'Patrones',
+  },
+  // Design Patterns
+  {
+    title: 'Hooks Pattern',
+    description: 'Reemplazar clases y HOCs con custom hooks reutilizables.',
+    route: appRoutes.PATTERNS_HOOKS,
+    color: 'teal',
+    icon: '🎣',
+    category: 'Design Patterns',
+  },
+  {
+    title: 'Compound Pattern',
+    description: 'Componentes que trabajan juntos compartiendo estado implícito.',
+    route: appRoutes.PATTERNS_COMPOUND,
+    color: 'orange',
+    icon: '🧩',
+    category: 'Design Patterns',
+  },
+  {
+    title: 'Container / Presentational',
+    description: 'Separar lógica de datos de la presentación visual.',
+    route: appRoutes.PATTERNS_CONTAINER_PRESENTATIONAL,
+    color: 'lime',
+    icon: '📦',
+    category: 'Design Patterns',
+  },
+  {
+    title: 'Render Props',
+    description: 'Compartir lógica pasando una función como prop que retorna JSX.',
+    route: appRoutes.PATTERNS_RENDER_PROPS,
+    color: 'sky',
+    icon: '🔄',
+    category: 'Design Patterns',
+  },
+  {
+    title: 'AI UI Patterns',
+    description: 'Chat, streaming, debouncing y componentes para interfaces de IA.',
+    route: appRoutes.PATTERNS_AI_UI,
+    color: 'fuchsia',
+    icon: '🤖',
+    category: 'Design Patterns',
   },
   // Estado global
   {
@@ -124,6 +173,11 @@ const colorClasses: Record<string, { bg: string; border: string; text: string; h
   pink: { bg: 'bg-pink-50', border: 'border-pink-200', text: 'text-pink-800', hover: 'hover:border-pink-400' },
   violet: { bg: 'bg-violet-50', border: 'border-violet-200', text: 'text-violet-800', hover: 'hover:border-violet-400' },
   rose: { bg: 'bg-rose-50', border: 'border-rose-200', text: 'text-rose-800', hover: 'hover:border-rose-400' },
+  teal: { bg: 'bg-teal-50', border: 'border-teal-200', text: 'text-teal-800', hover: 'hover:border-teal-400' },
+  orange: { bg: 'bg-orange-50', border: 'border-orange-200', text: 'text-orange-800', hover: 'hover:border-orange-400' },
+  lime: { bg: 'bg-lime-50', border: 'border-lime-200', text: 'text-lime-800', hover: 'hover:border-lime-400' },
+  sky: { bg: 'bg-sky-50', border: 'border-sky-200', text: 'text-sky-800', hover: 'hover:border-sky-400' },
+  fuchsia: { bg: 'bg-fuchsia-50', border: 'border-fuchsia-200', text: 'text-fuchsia-800', hover: 'hover:border-fuchsia-400' },
 };
 
 const categories = [...new Set(concepts.map((c) => c.category))];

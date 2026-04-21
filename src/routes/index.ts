@@ -11,10 +11,17 @@ export const appRoutes = {
   CONCEPTS_USE_REF: '/concepts/use-ref',
   CONCEPTS_USE_MEMO_CALLBACK: '/concepts/use-memo-callback',
   CONCEPTS_USE_REDUCER: '/concepts/use-reducer',
+  CONCEPTS_USE_TRANSITION: '/concepts/use-transition',
   CONCEPTS_CONTEXT_API: '/concepts/context-api',
   CONCEPTS_CUSTOM_HOOKS: '/concepts/custom-hooks',
   CONCEPTS_REDUX: '/concepts/redux',
   CONCEPTS_STYLED_COMPONENTS: '/concepts/styled-components',
+  // Design Patterns
+  PATTERNS_HOOKS: '/patterns/hooks',
+  PATTERNS_COMPOUND: '/patterns/compound',
+  PATTERNS_CONTAINER_PRESENTATIONAL: '/patterns/container-presentational',
+  PATTERNS_RENDER_PROPS: '/patterns/render-props',
+  PATTERNS_AI_UI: '/patterns/ai-ui',
   // Forms
   FORMS_CONTROLLED: '/forms/controlled',
   FORMS_UNCONTROLLED: '/forms/uncontrolled',
