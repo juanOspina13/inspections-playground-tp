@@ -68,6 +68,14 @@ const concepts: ConceptCard[] = [
     icon: '⏳',
     category: 'Hooks',
   },
+  {
+    title: 'useDeferredValue',
+    description: 'Difiere la versión de un valor para que renders costosos no bloqueen la UI.',
+    route: appRoutes.CONCEPTS_USE_DEFERRED_VALUE,
+    color: 'violet',
+    icon: '🔮',
+    category: 'Hooks',
+  },
   // Patrones
   {
     title: 'Context API',

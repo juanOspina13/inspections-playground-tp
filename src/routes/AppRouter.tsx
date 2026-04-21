@@ -21,6 +21,7 @@ import {
   RenderPropsPage,
   AIUIPatternPage,
   UseTransitionPage,
+  UseDeferredValuePage,
 } from '@/pages/concepts';
 
 export const router = createBrowserRouter([
@@ -72,6 +73,10 @@ export const router = createBrowserRouter([
       {
         path: appRoutes.CONCEPTS_USE_TRANSITION,
         element: <UseTransitionPage />,
+      },
+      {
+        path: appRoutes.CONCEPTS_USE_DEFERRED_VALUE,
+        element: <UseDeferredValuePage />,
       },
       {
         path: appRoutes.CONCEPTS_CONTEXT_API,
