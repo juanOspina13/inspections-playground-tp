@@ -160,6 +160,60 @@ const onRefresh = useCallback(() => fetchData(), [fetchData]);`}</pre>
         </details>
 
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+          <h2 className="text-lg font-semibold text-gray-700 mb-2">Capítulo: Function Destructuring</h2>
+          <p className="text-sm text-gray-500 mb-4">
+            <strong>Destructuring en funciones</strong> es extraer propiedades de un objeto directamente
+            en el parámetro. En React se usa para leer <code className="bg-gray-100 px-1 rounded">props</code>
+            de forma limpia, con defaults y mejor tipado.
+          </p>
+
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4 text-sm text-blue-800">
+            <ul className="list-disc list-inside space-y-1">
+              <li>Mejora legibilidad: reduces <code className="bg-blue-100 px-1 rounded">props.algo</code> repetidos.</li>
+              <li>Permite defaults en el parámetro: <code className="bg-blue-100 px-1 rounded">{`{ page = 1 }`}</code>.</li>
+              <li>Permite renombrar: <code className="bg-blue-100 px-1 rounded">{`{ page: currentPage }`}</code>.</li>
+              <li>Permite capturar props extra: <code className="bg-blue-100 px-1 rounded">...rest</code>.</li>
+              <li>Con TypeScript, tipas el objeto y obtienes autocompletado seguro.</li>
+            </ul>
+          </div>
+
+          <details className="bg-gray-800 rounded-lg text-xs text-blue-300 font-mono">
+            <summary className="cursor-pointer px-4 py-3 text-gray-300 hover:text-white">
+              Ver ejemplos de destructuring ▾
+            </summary>
+            <pre className="px-4 pb-4 overflow-x-auto">{`// 1) Sin destructuring
+function Badge(props: { label: string; size?: 'sm' | 'md' }) {
+  return <span>{props.label} - {props.size ?? 'md'}</span>;
+}
+
+// 2) Con destructuring + default
+function Badge({ label, size = 'md' }: { label: string; size?: 'sm' | 'md' }) {
+  return <span>{label} - {size}</span>;
+}
+
+// 3) Destructuring de props en React
+function UserCard({ name, role }: { name: string; role: string }) {
+  return <p>{name} ({role})</p>;
+}
+
+// 4) Renombrar + resto
+function Table({ page: currentPage, ...rest }: { page: number; pageSize: number }) {
+  console.log(rest.pageSize);
+  return <p>Page: {currentPage}</p>;
+}`}</pre>
+          </details>
+
+          <div className="mt-4 bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-800">
+            <strong>Errores comunes</strong>
+            <ul className="mt-1 list-disc list-inside space-y-1">
+              <li>Destructurar algo que puede ser <code className="bg-amber-100 px-1 rounded">undefined</code> sin fallback.</li>
+              <li>No tipar el objeto completo en TypeScript y perder seguridad.</li>
+              <li>Recrear objetos innecesarios en cada render cuando no es necesario.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
           <h2 className="text-lg font-semibold text-gray-700 mb-2">Controles del demo</h2>
           <p className="text-sm text-gray-500 mb-4">
             Haz click en <code className="bg-gray-100 px-1 rounded">Re-render padre</code> para cambiar estado no relacionado.
