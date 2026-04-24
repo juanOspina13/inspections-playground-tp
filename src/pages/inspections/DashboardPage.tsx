@@ -33,6 +33,12 @@ export function DashboardPage() {
         </div>
         <nav className="flex gap-3 mt-3 flex-wrap">
           <Link
+            to={appRoutes.DASHBOARD_CONCEPTS_OVERVIEW}
+            className="px-3 py-1.5 text-sm bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors"
+          >
+            📚 Resumen de Conceptos
+          </Link>
+          <Link
             to={appRoutes.HOME}
             className="px-3 py-1.5 text-sm bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors"
           >

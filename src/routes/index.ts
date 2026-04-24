@@ -29,4 +29,6 @@ export const appRoutes = {
   FORMS_CONTROLLED: '/forms/controlled',
   FORMS_UNCONTROLLED: '/forms/uncontrolled',
   FORMS_HOOK_FORM: '/forms/react-hook-form',
+  // Dashboard sub-pages
+  DASHBOARD_CONCEPTS_OVERVIEW: '/dashboard/concepts',
 };

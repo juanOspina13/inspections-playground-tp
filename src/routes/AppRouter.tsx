@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { AuthGuard } from '@/guards/Auth.guard';
 import { appRoutes } from '@/routes';
-import { DashboardPage } from '@/pages/inspections/DashboardPage';
+import { DashboardPage, ConceptsOverviewPage } from '@/pages/inspections';
 import { ControlledFormPage, UncontrolledFormPage, ReactHookFormPage } from '@/pages/forms';
 import {
   ConceptsHomePage,
@@ -45,6 +45,10 @@ export const router = createBrowserRouter([
       {
         path: appRoutes.DASHBOARD,
         element: <DashboardPage />,
+      },
+      {
+        path: appRoutes.DASHBOARD_CONCEPTS_OVERVIEW,
+        element: <ConceptsOverviewPage />,
       },
       // Concepts
       {
