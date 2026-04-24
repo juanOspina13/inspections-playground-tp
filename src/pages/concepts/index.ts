@@ -17,3 +17,4 @@ export { AIUIPatternPage } from './AIUIPatternPage';
 export { UseTransitionPage } from './UseTransitionPage';
 export { UseDeferredValuePage } from './UseDeferredValuePage';
 export { UseActionStatePage } from './UseActionStatePage';
+export { TestingPage } from './TestingPage';

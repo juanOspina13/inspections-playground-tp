@@ -23,6 +23,7 @@ import {
   UseTransitionPage,
   UseDeferredValuePage,
   UseActionStatePage,
+  TestingPage,
 } from '@/pages/concepts';
 
 export const router = createBrowserRouter([
@@ -123,6 +124,11 @@ export const router = createBrowserRouter([
       {
         path: appRoutes.PATTERNS_AI_UI,
         element: <AIUIPatternPage />,
+      },
+      // Testing
+      {
+        path: appRoutes.CONCEPTS_TESTING,
+        element: <TestingPage />,
       },
       // Forms
       {

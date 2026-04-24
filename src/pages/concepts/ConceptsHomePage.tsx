@@ -185,6 +185,15 @@ const concepts: ConceptCard[] = [
     icon: '📋',
     category: 'Formularios',
   },
+  // Testing
+  {
+    title: 'Testing con Vitest',
+    description: 'Test suites, user interaction, connected components, async code y mocks con Vitest + Testing Library.',
+    route: appRoutes.CONCEPTS_TESTING,
+    color: 'emerald',
+    icon: '🧪',
+    category: 'Testing',
+  },
 ];
 
 const colorClasses: Record<string, { bg: string; border: string; text: string; hover: string }> = {
@@ -202,6 +211,7 @@ const colorClasses: Record<string, { bg: string; border: string; text: string; h
   lime: { bg: 'bg-lime-50', border: 'border-lime-200', text: 'text-lime-800', hover: 'hover:border-lime-400' },
   sky: { bg: 'bg-sky-50', border: 'border-sky-200', text: 'text-sky-800', hover: 'hover:border-sky-400' },
   fuchsia: { bg: 'bg-fuchsia-50', border: 'border-fuchsia-200', text: 'text-fuchsia-800', hover: 'hover:border-fuchsia-400' },
+  emerald: { bg: 'bg-emerald-50', border: 'border-emerald-200', text: 'text-emerald-800', hover: 'hover:border-emerald-400' },
 };
 
 const categories = [...new Set(concepts.map((c) => c.category))];

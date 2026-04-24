@@ -31,4 +31,6 @@ export const appRoutes = {
   FORMS_HOOK_FORM: '/forms/react-hook-form',
   // Dashboard sub-pages
   DASHBOARD_CONCEPTS_OVERVIEW: '/dashboard/concepts',
+  // Testing
+  CONCEPTS_TESTING: '/concepts/testing',
 };
