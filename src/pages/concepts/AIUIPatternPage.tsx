@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback, type ReactNode, type FormEvent } from 'react';
+import { useState, useEffect, useRef, useCallback,  type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { appRoutes } from '@/routes';
 import { mockInspections } from '@/data/mockData';
@@ -10,7 +10,7 @@ import type { Inspection } from '@/types/inspection';
 
 interface ChatMessage {
   id: string;
-  role: 'user' | 'assistant' | 'system';
+  role: any;
   content: string;
 }
 

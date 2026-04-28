@@ -149,4 +149,4 @@ export const router = createBrowserRouter([
     path: '*',
     element: <Navigate to={appRoutes.HOME} replace />,
   },
-]);
+], { basename: import.meta.env.VITE_BASE_PATH || '/' });

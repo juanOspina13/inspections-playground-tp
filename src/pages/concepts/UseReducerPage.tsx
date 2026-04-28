@@ -64,14 +64,6 @@ function scheduleReducer(
   }
 }
 
-function newReducer(state: InspectionScheduleState, action: ScheduleAction): InspectionScheduleState {
-  switch (action.type) {
-    case 'programar':
-      return { ...state, proximaInspeccion: action.payload };
-    default:
-      return state;
-  }
-}
 export function UseReducerPage() {
   const [state, dispatch] = useReducer(scheduleReducer, initialState);
 
